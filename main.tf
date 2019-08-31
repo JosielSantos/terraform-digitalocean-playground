@@ -14,3 +14,7 @@ resource "digitalocean_droplet" "web" {
     image = "ubuntu-18-04-x64"
     ssh_keys = ["${digitalocean_ssh_key.default.fingerprint}"]
 }
+
+output "ipv4_address" {
+    value = "${digitalocean_droplet.web.ipv4_address}"
+}
